@@ -2,7 +2,7 @@
 EMAIL="luisedgardoortiz@gmail.com"
 SERVICE='mysqld'
 NAME='hostname'
-if [[ ! "$(service $SERVICE status)" =~ "start/running" ]]
+if [[ `service mysqld status | grep running ` -ne 0 ]]
 then
     ps -ef | grep $SERVICE | grep -v grep | awk '{print $2}' | xargs kill
     service $SERVICE start
