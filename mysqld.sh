@@ -2,7 +2,7 @@
 EMAIL="luisedgardoortiz@gmail.com"
 SERVICE='mysqld'
 NAME='hostname'
-STATUS=`pgrep mysql | wc -l`
+STATUS='pgrep mysql | wc -l'
 if [ $STATUS -ne 1 ]
 then
     ps -ef | grep $SERVICE | grep -v grep | awk '{print $2}' | xargs kill
